@@ -25,11 +25,21 @@ cache:
   paths:
     - node_modules/
 
+test_backend_build:
+  script:
+    - cd backend
+    - npm install
+
 test_backend:
   script:
     - cd backend
     - npm install
     - npm run test
+
+test_frontend_build:
+  script:
+    - cd frontend
+    - npm install
 
 test_frontend:
   script:
