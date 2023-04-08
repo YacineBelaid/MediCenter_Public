@@ -25,15 +25,17 @@ cache:
   paths:
     - node_modules/
 
-test_async:
+test_backend:
   script:
+    - cd backend
     - npm install
-    - node ./specs/start.js ./specs/async.spec.js
+    - npm run test
 
-test_db:
+test_frontend:
   script:
+    - cd frontend
     - npm install
-    - node ./specs/start.js ./specs/db-postgres.spec.js
+    - npm run test
 
 deploy:
   stage: deploy
