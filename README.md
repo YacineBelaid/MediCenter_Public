@@ -2,7 +2,7 @@
 
 
 
-## Projet
+## Cadre de developpement
 
 Ce projet est developper dans le cadre du cours de conception INF5153 au cours de la session hiver 2023 [voir le lien du cours](https://ena01.uqam.ca/course/view.php?id=56107)!
 
