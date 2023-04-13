@@ -59,7 +59,7 @@ Cette application exportable en format logiciel laisse une grande flexibilité d
 ## Auteurs du projet
 
 Nadir Hadji  ()  
-Ayoub Baia  ()  
+Ayoub Baia  (BAIA03019506)  
 Yacine Belaid (BELY22119707)
 
 ## License du projet
