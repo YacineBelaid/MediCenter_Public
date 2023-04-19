@@ -6,14 +6,23 @@ import { VisitesComponent } from './components/visites/visites.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ListeVisitesComponent } from './components/liste-visites/liste-visites.component';
 import { InterventionsComponent } from './components/interventions/interventions.component';
+import { LoginComponent } from './components/login/login.component';
+import { PortailComponent } from './components/portail/portail.component';
 
 const routes: Routes = [
-  { path: 'acceuil', component: AcceuilComponent },
-  { path: 'patients', component: PatientsComponent },
-  { path: 'visites', component: VisitesComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'liste-visites', component: ListeVisitesComponent },
-  { path: 'interventions', component: InterventionsComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'portail',
+    component: PortailComponent,
+    children: [
+      { path: 'acceuil', component: AcceuilComponent },
+      { path: 'patients', component: PatientsComponent },
+      { path: 'visites', component: VisitesComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'liste-visites', component: ListeVisitesComponent },
+      { path: 'interventions', component: InterventionsComponent },
+    ],
+  },
 ];
 
 @NgModule({
