@@ -15,7 +15,20 @@ import { LoginComponent } from './components/login/login.component';
 import { PortailComponent } from './components/portail/portail.component';
 
 @NgModule({
-  declarations: [AppComponent, AsideComponent, NavComponent, ContentComponent, AcceuilComponent, PatientsComponent, VisitesComponent, InterventionsComponent, ListeVisitesComponent, ProfileComponent, LoginComponent, PortailComponent],
+  declarations: [
+    AppComponent,
+    AsideComponent,
+    NavComponent,
+    ContentComponent,
+    AcceuilComponent,
+    PatientsComponent,
+    VisitesComponent,
+    InterventionsComponent,
+    ListeVisitesComponent,
+    ProfileComponent,
+    LoginComponent,
+    PortailComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
