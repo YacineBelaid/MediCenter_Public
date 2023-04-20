@@ -25,26 +25,56 @@ cache:
   paths:
     - node_modules/
 
-backend_build:
+API_Read_build:
   script:
-    - cd backend
+    - cd serveur/api-read
+    - npm install
+API_Write_build:
+  script:
+    - cd ../api-write
+    - npm install
+API_Authentification_build:
+  script:
+    - cd ../api-authentification
     - npm install
 
-frontend_build:
+APP_Patient_build:
   script:
-    - cd frontend
+    - cd client/app-patient
     - npm install
 
-test_backend:
+Portail_Pro_build:
   script:
-    - cd backend
+    - cd ../portail-professionnel
+    - npm install
+
+test_API_read:
+  script:
+    - cd serveur/api-read
     - npm install
     - npm run test
 
-
-test_frontend:
+test_API_write:
   script:
-    - cd frontend
+    - cd ../api-write
+    - npm install
+    - npm run test
+
+test_API_authentification:
+  script:
+    - cd ../api-authentification
+    - npm install
+    - npm run test
+
+test_app_patient:
+  script:
+    - cd client/app-patient
+    - npm install
+    - npm run test
+    
+test_portail_professionnel:
+  script:
+    - cd ../portail-professionnel
     - npm install
     - npm run test
 
