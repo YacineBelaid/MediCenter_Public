@@ -8,9 +8,11 @@ import { ListeVisitesComponent } from './components/liste-visites/liste-visites.
 import { InterventionsComponent } from './components/interventions/interventions.component';
 import { LoginComponent } from './components/login/login.component';
 import { PortailComponent } from './components/portail/portail.component';
-
+import { SignupComponent } from './components/signup/signup.component';
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   {
     path: 'portail',
     component: PortailComponent,

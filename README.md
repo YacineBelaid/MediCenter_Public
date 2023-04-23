@@ -8,7 +8,7 @@ Ce projet est developper dans le cadre du cours de conception INF5153 au cours d
 
 ## Installation du projet
 
-- [ ] Assurez vous de disposer d'une instance mysql ouverte sur voter ordinateur
+- [ ] Assurez vous de disposer d'une instance mysql ouverte sur  ordinateur
 
 ```
 cd dossier_medical_centralise

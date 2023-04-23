@@ -13,7 +13,10 @@ import { ListeVisitesComponent } from './components/liste-visites/liste-visites.
 import { ProfileComponent } from './components/profile/profile.component';
 import { LoginComponent } from './components/login/login.component';
 import { PortailComponent } from './components/portail/portail.component';
-
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SignupComponent } from './components/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,8 +31,13 @@ import { PortailComponent } from './components/portail/portail.component';
     ProfileComponent,
     LoginComponent,
     PortailComponent,
+    SignupComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [ReactiveFormsModule,
+    FormsModule,
+    BrowserModule,
+     AppRoutingModule,
+     HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

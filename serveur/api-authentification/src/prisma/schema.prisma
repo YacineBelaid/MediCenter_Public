@@ -10,17 +10,18 @@ datasource db {
 model pro_sante {
   id        Int             @id @default(autoincrement()) @db.UnsignedInt
   genre     pro_sante_genre @default(F)
-  telephone Int
+  telephone Int             @db.Int()
   medecin   Boolean?
 }
 
 model users {
   id         Int      @id @db.UnsignedInt
-  email      String   @default("") @db.VarChar(11)
-  password   String   @default("") @db.VarChar(11)
+  email      String   @default("") 
+  password   String   @default("") 
   created_at DateTime @default(now()) @db.Timestamp(0)
   updated_at DateTime @default(now()) @db.Timestamp(0)
   pro_sante  Boolean?
+  @@unique([email])
 }
 
 enum pro_sante_genre {

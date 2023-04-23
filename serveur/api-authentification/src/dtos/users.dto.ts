@@ -1,20 +1,26 @@
-import { IsEmail, IsString, IsNotEmpty, MinLength, MaxLength } from 'class-validator';
+// eslint-disable-next-line prettier/prettier
+import { IsBoolean, IsString, IsNotEmpty, MinLength, MaxLength, IsNumber } from 'class-validator';
 
 export class CreateUserDto {
-  @IsEmail()
-  public email: string;
-
+  @IsNumber()
+  public id: number;
   @IsString()
-  @IsNotEmpty()
-  @MinLength(9)
-  @MaxLength(32)
+  @MaxLength(1000)
+  public email: string;
+  @IsString()
+  @MinLength(4)
+  @MaxLength(1000)
   public password: string;
+  @IsBoolean()
+  public pro_sante: boolean;
 }
 
 export class UpdateUserDto {
   @IsString()
   @IsNotEmpty()
-  @MinLength(9)
+  @MinLength(4)
   @MaxLength(32)
-  public password: string;
+  public password: String;
+  @IsBoolean()
+  public pro_sante: Boolean;
 }

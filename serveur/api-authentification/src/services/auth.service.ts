@@ -10,9 +10,9 @@ import { User } from '@interfaces/users.interface';
 
 @Service()
 export class AuthService {
-  public users = new PrismaClient().user;
+  public users = new PrismaClient().users;
 
-  public async signup(userData: CreateUserDto): Promise<User> {
+  public async signup(userData: User): Promise<User> {
     const findUser: User = await this.users.findUnique({ where: { email: userData.email } });
     if (findUser) throw new HttpException(409, `This email ${userData.email} already exists`);
 
@@ -23,7 +23,7 @@ export class AuthService {
   }
 
   public async login(userData: CreateUserDto): Promise<{ cookie: string; findUser: User }> {
-    const findUser: User = await this.users.findUnique({ where: { email: userData.email } });
+    const findUser: User = await this.users.findUnique({ where: { email: userData.email as unknown as string } });
     if (!findUser) throw new HttpException(409, `This email ${userData.email} was not found`);
 
     const isPasswordMatching: boolean = await compare(userData.password, findUser.password);

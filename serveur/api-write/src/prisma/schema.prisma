@@ -7,9 +7,15 @@ datasource db {
   url      = "mysql://root:root@localhost:3306/Write_DMC"
 }
 
-model Patient {
-  id             Int  @id @default(autoincrement()) @db.UnsignedInt
-  nom            Int?
-  prenom         Int?
-  date_naissance Int?
+model Antecedants {
+  id      Int       @id @default(autoincrement()) @db.UnsignedInt
+  Date    DateTime? @default(now()) @db.Timestamp(0)
+  Medecin String?   @db.VarChar(1000)
+  Maladie String?   @db.VarChar(1000)
+}
+
+model Visites {
+  id      Int       @id @default(autoincrement()) @db.UnsignedInt
+  Date    DateTime? @default(now()) @db.Timestamp(0)
+  Medecin String?   @db.VarChar(1000)
 }
