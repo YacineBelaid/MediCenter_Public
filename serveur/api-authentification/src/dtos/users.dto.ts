@@ -1,12 +1,10 @@
 // eslint-disable-next-line prettier/prettier
-import { IsBoolean, IsString, IsNotEmpty, MinLength, MaxLength, IsNumber } from 'class-validator';
+import { IsBoolean, IsString, IsNotEmpty, MinLength, MaxLength, IsInt } from 'class-validator';
 
 export class CreateUserDto {
-  @IsNumber()
-  public id: number;
-  @IsString()
-  @MaxLength(1000)
-  public identifiant: string;
+  @IsNotEmpty()
+  @IsInt()
+  public identifiant: number;
   @IsString()
   @MaxLength(1000)
   public lastname: string;

@@ -12,14 +12,14 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(email: string, password: string): Observable<{ cookie: string; findUser: User }> {
-    const loginData = { email, password };
+  login(identifiant: number, password: string): Observable<{ cookie: string; findUser: User }> {
+    const loginData = { identifiant, password };
     return this.http.post<{ cookie: string; findUser: User }>(this.Auth_API +"/" + "login", loginData)
       .pipe(
         tap(response => {
           const { cookie, findUser } = response;
           // Stockez le cookie d'authentification dans le stockage local ou de session
-          localStorage.setItem('auth_cookie', cookie);
+          localStorage.setItem('auth_cookie',cookie);
           // Stockez les détails de l'utilisateur dans le stockage local ou de session
           localStorage.setItem('user', JSON.stringify(findUser));
         })
@@ -30,11 +30,12 @@ export class AuthService {
     // Supprimez le cookie et les détails de l'utilisateur du stockage local ou de session
     localStorage.removeItem('auth_cookie');
     localStorage.removeItem('user');
+    localStorage.clear;
     return this.http.post(this.Auth_API + "/"+ "logout", {});
   }
   // Vérifie si l'utilisateur est connecté ou non
   isLoggedIn(): boolean {
-    return localStorage.getItem('auth_cookie') !== null;
+    return localStorage.getItem('auth_cookie') != undefined;
   }
   //fonction d'inscription
   signup(userData: Partial<User>): Observable<{ cookie: string; findUser: User }> {

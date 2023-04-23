@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Drawer } from 'flowbite';
+import { AuthService } from 'src/app/services/login.service.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,9 +11,14 @@ import { Drawer } from 'flowbite';
 export class NavComponent implements OnInit {
   drawer: Drawer = {} as Drawer;
 
-  constructor() {}
+  constructor( private log: AuthService, // Injection du service auth
+  private router: Router) {}
 
   ngOnInit(): void {
     this.drawer = new Drawer(document.getElementById('logo-sidebar'));
+  }
+  logout(){
+    this.log.logout();
+    this.router.navigate(['/login']);
   }
 }

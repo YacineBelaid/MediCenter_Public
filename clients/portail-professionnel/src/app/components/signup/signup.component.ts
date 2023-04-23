@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      username: [, Validators.required],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
       firstName: ['', [Validators.required]],
@@ -30,17 +30,18 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const identifiant = this.signupForm.get("username")?.value;
+    const id = this.signupForm.get("username")?.value;
     const password = this.signupForm.get("password")?.value;
     const Date_naissance = this.signupForm.get("birthdate")?.value;
     const lastname = this.signupForm.get("lastName")?.value;
     const Firstname = this.signupForm.get("firstName")?.value;
     const pro_sante = this.signupForm.get("professionnelSante")?.value;
     const confirmPassword = this.signupForm.get("confirmPassword")?.value;
-    const id = Math.floor(Math.random()*1000)
-    const userData = {id,lastname,Firstname,identifiant,Date_naissance,password,pro_sante}
+
     
-    if (identifiant && password && confirmPassword && Firstname && lastname && Date_naissance) {
+    if (id && password && confirmPassword && Firstname && lastname && Date_naissance) {
+      const identifiant = parseInt(id)
+      const userData = {lastname,Firstname,identifiant,Date_naissance,password,pro_sante}
       if (password !== confirmPassword) {
         // gestion des mots de passe
         console.log("Passwords do not match");

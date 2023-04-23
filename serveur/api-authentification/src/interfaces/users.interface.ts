@@ -1,6 +1,5 @@
 export interface User {
-  id: number;
-  identifiant: string;
+  identifiant: number;
   password: string;
   pro_sante: boolean;
   lastname: string;

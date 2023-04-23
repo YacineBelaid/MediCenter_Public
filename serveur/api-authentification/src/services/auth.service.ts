@@ -12,7 +12,7 @@ export class AuthService {
   public users = new PrismaClient().users;
 
   public async signup(userData: User): Promise<User> {
-    const findUser: User = await this.users.findUnique({ where: { id: userData.id } });
+    const findUser: User = await this.users.findUnique({ where: { identifiant: userData.identifiant } });
     if (findUser) throw new HttpException(409, `This email ${userData.identifiant} already exists`);
 
     const hashedPassword = await hash(userData.password, 10);
@@ -42,7 +42,7 @@ export class AuthService {
   }
 
   public createToken(user: User): TokenData {
-    const dataStoredInToken: DataStoredInToken = { id: user.id };
+    const dataStoredInToken: DataStoredInToken = { identifiant: user.identifiant };
     const secretKey: string = SECRET_KEY;
     const expiresIn: number = 60 * 60;
 

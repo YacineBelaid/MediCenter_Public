@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
       '',
       [
         Validators.required,
-        Validators.pattern('^[A-Za-z0-9@.]+$'),
         Validators.maxLength(35),
       ],
     ],
@@ -32,9 +31,10 @@ export class LoginComponent implements OnInit {
    }
 
   onSubmit() {
-    const identifiant = this.loginForm.get("username")?.value
+    let id = this.loginForm.get("username")?.value;
     const password = this.loginForm.get('password')?.value;
-    if(identifiant && password){
+    if(id && password){
+      const identifiant = parseInt(id)
     this.authService.login(identifiant, password).subscribe(
       (response) => {
         // Redirigez l'utilisateur vers une page de succès ou une page d'accueil
