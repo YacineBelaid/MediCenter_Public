@@ -27,14 +27,17 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const email = this.signupForm.get("username")?.value;
+    const identifiant = this.signupForm.get("username")?.value;
     const password = this.signupForm.get("password")?.value;
+    const birthdate = this.signupForm.get("birthdate")?.value;
+    const lastName = this.signupForm.get("lastName")?.value;
+    const firstName = this.signupForm.get("firstName")?.value;
+    const professionnelSante = this.signupForm.get("professionnelSante")?.value;
     const confirmPassword = this.signupForm.get("confirmPassword")?.value;
-    const pro_sante = false
     const id = Math.floor(Math.random()*1000)
-    const userData = {id,email,password,pro_sante}
+    const userData = {id,lastName,firstName,identifiant,birthdate,password,professionnelSante}
     
-    if (email && password && confirmPassword) {
+    if (identifiant && password && confirmPassword) {
       if (password !== confirmPassword) {
         // gestion des mots de passe
         console.log("Passwords do not match");
