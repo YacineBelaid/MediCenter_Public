@@ -3,10 +3,12 @@ export interface Login {
   password: string;
 }
 export interface User {
-   id: number;
-   email: string;
-   password: string;
-   pro_sante: boolean;
+  identifiant: number;
+  password: string;
+  pro_sante: boolean;
+  lastname: string;
+  Firstname: string;
+  Date_naissance: string;
 }
 export interface UpdateUserDto {
    password: String;

@@ -42,7 +42,7 @@ export class AuthService {
   }
 
   public createToken(user: User): TokenData {
-    const dataStoredInToken: DataStoredInToken = { identifiant: user.identifiant };
+    const dataStoredInToken: DataStoredInToken = { identifiant: user.identifiant, professionnel_sante: user.pro_sante };
     const secretKey: string = SECRET_KEY;
     const expiresIn: number = 60 * 60;
 

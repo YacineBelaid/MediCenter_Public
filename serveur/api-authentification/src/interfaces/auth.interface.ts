@@ -3,6 +3,7 @@ import { User } from '@interfaces/users.interface';
 
 export interface DataStoredInToken {
   identifiant: number;
+  professionnel_sante: boolean;
 }
 
 export interface TokenData {

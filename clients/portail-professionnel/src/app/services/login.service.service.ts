@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { tap,map } from 'rxjs/operators';
 import { User } from '../interfaces/login.interface';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { User } from '../interfaces/login.interface';
 })
 export class AuthService {
   private Auth_API = 'http://localhost:3100'; 
-
+  public currentUser : any;
   constructor(private http: HttpClient) { }
 
   login(identifiant: number, password: string): Observable<{ cookie: string; findUser: User }> {
@@ -18,16 +18,20 @@ export class AuthService {
       .pipe(
         tap(response => {
           const { cookie, findUser } = response;
-          // Stockez le cookie d'authentification dans le stockage local ou de session
+         // console.log(response)
+         console.log("cookie:", cookie, "\nuser:", findUser);
+         localStorage.setItem('response',JSON.stringify(response));
+          // Stockez le cookie d'authentification dans le stockage local ou de local
           localStorage.setItem('auth_cookie',cookie);
-          // Stockez les détails de l'utilisateur dans le stockage local ou de session
-          localStorage.setItem('user', JSON.stringify(findUser));
-        })
+          // Stockez les détails de l'utilisateur dans le stockage local ou de local
+          localStorage.setItem('user', JSON.stringify(findUser));  
+
+        }),
       );
   }
 
   logout(): Observable<any> {
-    // Supprimez le cookie et les détails de l'utilisateur du stockage local ou de session
+    // Supprimez le cookie et les détails de l'utilisateur du stockage local ou de local
     localStorage.removeItem('auth_cookie');
     localStorage.removeItem('user');
     localStorage.clear;

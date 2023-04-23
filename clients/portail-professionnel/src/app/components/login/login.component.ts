@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
       const identifiant = parseInt(id)
     this.authService.login(identifiant, password).subscribe(
       (response) => {
+        
         // Redirigez l'utilisateur vers une page de succès ou une page d'accueil
         this.router.navigate(['/portail']);
       },
