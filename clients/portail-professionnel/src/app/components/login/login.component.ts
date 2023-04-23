@@ -32,10 +32,10 @@ export class LoginComponent implements OnInit {
    }
 
   onSubmit() {
-    const email = this.loginForm.get("username")?.value
+    const identifiant = this.loginForm.get("username")?.value
     const password = this.loginForm.get('password')?.value;
-    if(email && password){
-    this.authService.login(email, password).subscribe(
+    if(identifiant && password){
+    this.authService.login(identifiant, password).subscribe(
       (response) => {
         // Redirigez l'utilisateur vers une page de succès ou une page d'accueil
         this.router.navigate(['/portail']);

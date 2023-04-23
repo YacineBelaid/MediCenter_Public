@@ -22,22 +22,25 @@ export class SignupComponent implements OnInit {
     this.signupForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
-      confirmPassword: ['', Validators.required]
+      confirmPassword: ['', Validators.required],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      birthdate: ['', [Validators.required]]
     });
   }
 
   onSubmit(): void {
     const identifiant = this.signupForm.get("username")?.value;
     const password = this.signupForm.get("password")?.value;
-    const birthdate = this.signupForm.get("birthdate")?.value;
-    const lastName = this.signupForm.get("lastName")?.value;
-    const firstName = this.signupForm.get("firstName")?.value;
-    const professionnelSante = this.signupForm.get("professionnelSante")?.value;
+    const Date_naissance = this.signupForm.get("birthdate")?.value;
+    const lastname = this.signupForm.get("lastName")?.value;
+    const Firstname = this.signupForm.get("firstName")?.value;
+    const pro_sante = this.signupForm.get("professionnelSante")?.value;
     const confirmPassword = this.signupForm.get("confirmPassword")?.value;
     const id = Math.floor(Math.random()*1000)
-    const userData = {id,lastName,firstName,identifiant,birthdate,password,professionnelSante}
+    const userData = {id,lastname,Firstname,identifiant,Date_naissance,password,pro_sante}
     
-    if (identifiant && password && confirmPassword) {
+    if (identifiant && password && confirmPassword && Firstname && lastname && Date_naissance) {
       if (password !== confirmPassword) {
         // gestion des mots de passe
         console.log("Passwords do not match");

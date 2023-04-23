@@ -6,21 +6,18 @@ export class CreateUserDto {
   public id: number;
   @IsString()
   @MaxLength(1000)
-  public email: string;
+  public identifiant: string;
+  @IsString()
+  @MaxLength(1000)
+  public lastname: string;
+  @IsString()
+  @MaxLength(1000)
+  public Firstname: string;
+  public Date_naissance: string;
   @IsString()
   @MinLength(4)
   @MaxLength(1000)
   public password: string;
   @IsBoolean()
   public pro_sante: boolean;
-}
-
-export class UpdateUserDto {
-  @IsString()
-  @IsNotEmpty()
-  @MinLength(4)
-  @MaxLength(32)
-  public password: String;
-  @IsBoolean()
-  public pro_sante: Boolean;
 }

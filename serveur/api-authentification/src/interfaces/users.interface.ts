@@ -1,6 +1,9 @@
 export interface User {
   id: number;
-  email: string;
+  identifiant: string;
   password: string;
   pro_sante: boolean;
+  lastname: string;
+  Firstname: string;
+  Date_naissance: string;
 }
