@@ -1,0 +1,17 @@
+# baseURL
+@baseURL = http://localhost:3000
+
+###
+# Find All Visite
+GET {{ baseURL }}/getVisites
+###
+# Find All Antecedants
+GET {{ baseURL }}/getAntecedants
+
+###
+# Create Visite
+GET {{ baseURL }}/createVisites
+###
+# Create Antecedants
+GET {{ baseURL }}/createAntecedants
+
