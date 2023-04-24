@@ -16,14 +16,14 @@ export class ArtefactService {
     return allvisites;
   }
   public async createAntecedants(Antecedants: Antecedants): Promise<Antecedants> {
-    const findAntecedants: Antecedants = await this.antecedants.findUnique({ where: { ...Antecedants } });
+    const findAntecedants: Antecedants = await this.antecedants.findUnique({ where: { id : Antecedants.id } });
     if (findAntecedants) throw new HttpException(409, `This row ${Antecedants} already exists`);
 
     const createAntecedantsData: Antecedants = await this.antecedants.create({ data: { ...Antecedants } });
     return createAntecedantsData;
   }
   public async createVisites(Visites: Visites): Promise<Visites> {
-    const findVisites: Visites = await this.visites.findUnique({ where: { ...Visites } });
+    const findVisites: Visites = await this.visites.findUnique({ where: { id : Visites.id } });
     if (findVisites) throw new HttpException(409, `This row ${Antecedants} already exists`);
 
     const createVisitesData: Visites = await this.visites.create({ data: { ...Visites } });

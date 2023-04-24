@@ -3,15 +3,26 @@
 
 ###
 # Find All Visite
-GET {{ baseURL }}/getVisites
+POST {{ baseURL }}/Visites
 ###
 # Find All Antecedants
-GET {{ baseURL }}/getAntecedants
+POST {{ baseURL }}/Antecedants
 
 ###
 # Create Visite
-GET {{ baseURL }}/createVisites
+POST {{ baseURL }}/VisitesCreate
+Content-Type: application/json
+
+{
+    "id": 200,
+	"Medecin": "Ayoub"
+}
+
 ###
 # Create Antecedants
-GET {{ baseURL }}/createAntecedants
-
+POST {{ baseURL }}/AntecedantsCreate
+{
+    "id": 200,
+	"Medcin": "Yacine",
+    "Maladie":"Entorse"
+}

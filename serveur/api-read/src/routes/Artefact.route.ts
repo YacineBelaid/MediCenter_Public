@@ -13,7 +13,7 @@ export class ArtefactRoute implements Routes {
   }
 
   private initializeRoutes() {
-    this.router.post(`${this.AntecedantsPath}/:id(\\d+)`, this.artefact.getAntecedants);
-    this.router.post(`${this.VisitesPath}/:id(\\d+)`, this.artefact.getVisites);
+    this.router.post(`${this.AntecedantsPath}`, this.artefact.getAntecedants);
+    this.router.post(`${this.VisitesPath}`, this.artefact.getVisites);
   }
 }

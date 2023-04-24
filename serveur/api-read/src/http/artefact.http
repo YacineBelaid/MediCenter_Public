@@ -3,8 +3,8 @@
 
 ###
 # Find All Visite
-GET {{ baseURL }}/getVisites
+POST {{ baseURL }}/getVisites
 ###
 # Find All Antecedants
-GET {{ baseURL }}/getAntecedants
+POST {{ baseURL }}/getAntecedants
 

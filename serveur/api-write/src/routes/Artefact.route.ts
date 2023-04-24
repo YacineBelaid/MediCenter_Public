@@ -15,7 +15,7 @@ export class ArtefactRoute implements Routes {
   private initializeRoutes() {
     this.router.post(`${this.AntecedantsPath}`, this.artefact.getAntecedants);
     this.router.post(`${this.VisitesPath}`, this.artefact.getVisites);
-    this.router.post(`${this.AntecedantsPath}/create/:id(\\d+)`, this.artefact.createAntecedants);
-    this.router.post(`${this.VisitesPath}/create/:id(\\d+)`, this.artefact.createVisite);
+    this.router.post(`${this.AntecedantsPath}create/`, this.artefact.createAntecedants);
+    this.router.post(`${this.VisitesPath}create/`, this.artefact.createVisite);
   }
 }
