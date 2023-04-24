@@ -7,15 +7,42 @@ datasource db {
   url      = "mysql://root:root@localhost:3306/Read_DMC"
 }
 
+model Patient {
+  id              Int    @id @default(autoincrement()) @db.UnsignedInt
+  Nom             String @db.VarChar(200)
+  Prenom          String @db.VarChar(200)
+  Date_naissance  String @db.VarChar(200)
+  Genre           Genre
+  Ville_Naissance String @db.VarChar(200)
+}
+
+model Dossier {
+  nas         String        @id @unique @db.VarChar(1000)
+  visites     Visites[]
+  antecedants Antecedants[]
+}
+
 model Antecedants {
-  id      Int       @id @default(autoincrement()) @db.UnsignedInt
-  Date    DateTime? @default(now()) @db.Timestamp(0)
-  Medecin String?   @db.VarChar(1000)
-  Maladie String?   @db.VarChar(1000)
+  id         Int       @id @default(autoincrement()) @db.UnsignedInt
+  Date       DateTime? @default(now()) @db.Timestamp(0)
+  Medecin    String?   @db.VarChar(1000)
+  Maladie    String?   @db.VarChar(1000)
+  dossierId  Int?      @db.UnsignedInt
+  Dossier    Dossier?  @relation(fields: [dossierNas], references: [nas])
+  dossierNas String?   @db.VarChar(1000)
 }
 
 model Visites {
-  id      Int       @id @default(autoincrement()) @db.UnsignedInt
-  Date    DateTime? @default(now()) @db.Timestamp(0)
-  Medecin String?   @db.VarChar(1000)
+  id         Int       @id @default(autoincrement()) @db.UnsignedInt
+  Date       DateTime? @default(now()) @db.Timestamp(0)
+  Medecin    String?   @db.VarChar(1000)
+  dossierId  Int?      @db.UnsignedInt
+  Dossier    Dossier?  @relation(fields: [dossierNas], references: [nas])
+  dossierNas String?   @db.VarChar(1000)
+}
+
+enum Genre {
+  F
+  M
+  A
 }

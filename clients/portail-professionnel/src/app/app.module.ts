@@ -33,11 +33,13 @@ import { SignupComponent } from './components/signup/signup.component';
     PortailComponent,
     SignupComponent,
   ],
-  imports: [ReactiveFormsModule,
+  imports: [
+    ReactiveFormsModule,
     FormsModule,
     BrowserModule,
-     AppRoutingModule,
-     HttpClientModule],
+    AppRoutingModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
