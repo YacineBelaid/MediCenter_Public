@@ -1,12 +1,12 @@
 {
   "name": "portail-professionnel",
   "version": "0.0.0",
-  "main" : "main.js",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
+    "start": "ng serve --port 4100",
     "start:electron": "ng build --base-href ./ && electron .",
     "build:electron": "ng build && electron-packager . --asar --ignore=/node_modules --ignore=/e2e --ignore=/src --overwrite --out=./build",
-    "start": "ng serve --port 4100",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -21,7 +21,6 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
-    "@angular/service-worker": "^14.0.0",
     "flowbite": "^1.6.5",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

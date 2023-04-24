@@ -11,14 +11,17 @@ import { AuthService } from 'src/app/services/login.service.service';
 export class NavComponent implements OnInit {
   drawer: Drawer = {} as Drawer;
 
-  constructor( private log: AuthService, // Injection du service auth
-  private router: Router) {}
+  constructor(
+    private log: AuthService, // Injection du service auth
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.drawer = new Drawer(document.getElementById('logo-sidebar'));
   }
-  logout(){
+
+  logout() {
     this.log.logout();
-    this.router.navigate(['/login']);
+    this.router.navigateByUrl('/login');
   }
 }
