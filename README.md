@@ -14,7 +14,7 @@ yacine.bld.belaid@gmail.com
 - [ ] Make sure to have a mysql instance launched on your machine
 
 ```
-cd dossier_medical_centralise
+cd dossier_medical_centralise / cd MediCenter
 cd backend
 npm i
 cd ../frontend
@@ -23,14 +23,14 @@ npm i
 Open two terminals    
 In the first :   
 ```
-cd dossier_medical_centralise
+cd dossier_medical_centralise / cd MediCenter
 cd backend
 npm run dev
 ```
 
 In the Second :    
 ```
-cd dossier_medical_centralise
+cd dossier_medical_centralise / cd MediCenter
 cd frontend
 npm run start
 ```
@@ -41,7 +41,7 @@ We're using gitlab CI/CD tools.If you are downloading this repertory locally, ma
 
 - [ ] Make sure to have a mysql instance launched on your machine
 ```
-cd dossier_medical_centralise
+cd dossier_medical_centralise / cd MediCenter
 cd backend
 npm run test
 cd ../frontend
