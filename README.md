@@ -1,9 +1,9 @@
-# Dossier Medical Centralisé
+# MediCenter
 
 Outdated version, contact me for any inquiries 
 yacine.bld.belaid@gmail.com
 
-## Cadre de developpement
+## Context of Development
 
 Prototype project for All platforms (web, mobile and computer)
 Most of the project description/comments are in french, if you need more information send me a message at 
