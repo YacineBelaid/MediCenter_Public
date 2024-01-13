@@ -48,23 +48,23 @@ cd ../frontend
 npm run test
 ```
 
-## Nom du projet
+## Project Name
 Dossier Medical Centralisé
 
-## Description du projet  
+## Project Description   
 We have designed this web-app in the purpose of offering the inhabitants of Quebec to collect and save their medical information in the form of a file in order to make them accessible through a single exchange channel between health professionals and patients.
 We have designed a simple displaying board allowing through the network and any electronic device to access their secure account. This application, which can be exported in software format, allows great flexibility in development while maintaining a quality user experience
 
 Also the infrastructure has been designed with the ability to be scaled to larger use allowing sharding strategies and multi instance deployments
 
-## Auteurs du projet
+## Authors
 
 Nadir Hadji  
 Ayoub Baia   
 Yacine Belaid 
 
-## License du projet
+## License 
 Projet Open Source, Licence MIT
 
-## Status du projet
+## Status 
 Under development ...
